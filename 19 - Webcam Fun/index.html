@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PhotoBooth!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://fav.farm/📸	" />
+  </head>
+  <body>
+    <div class="photobooth">
+      <div class="controls">
+        <div class="filters">
+          <button data-effect="none">No Effect</button>
+          <button data-effect="redEffect">Red Effect</button>
+          <button data-effect="rgba">RGB Split Effect</button>
+          <button data-effect="greenScreen">Green Screen Effect</button>
+        </div>
+        <div class="rgb" style="margin-left: 20px">
+          <label for="rmin">Red Min:</label>
+          <input type="range" min="0" max="255" name="rmin" />
+          <label for="rmax">Red Max:</label>
+          <input type="range" min="0" max="255" name="rmax" />
+
+          <br />
+
+          <label for="gmin">Green Min:</label>
+          <input type="range" min="0" max="255" name="gmin" />
+          <label for="gmax">Green Max:</label>
+          <input type="range" min="0" max="255" name="gmax" />
+
+          <br />
+
+          <label for="bmin">Blue Min:</label>
+          <input type="range" min="0" max="255" name="bmin" />
+          <label for="bmax">Blue Max:</label>
+          <input type="range" min="0" max="255" name="bmax" />
+        </div>
+        <button onClick="takePhoto()">📸 Take Photo</button>
+      </div>
+
+      <canvas class="photo"></canvas>
+      <video class="player" style="display: none"></video>
+      <div class="strip"></div>
+    </div>
+
+    <audio class="snap" src="./snap.mp3" hidden></audio>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
